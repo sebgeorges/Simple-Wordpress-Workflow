@@ -21,6 +21,12 @@ What it does:
     
         git clone https://github.com/sebgeorges/Simple-Wordpress-Workflow.git
 
+Then copy the content of the repo and copy to your theme root directory
+
+**WARNING**
+
+Be careful if you already have folders named **js** or **development** containing files at the theme root as this step may erase exisiting content! Ensure that you either rename your exisiting folders or manually transfer the content form the repo to your exisiting folder.
+
 3. if it is already created, move the default style.css file to the development/css folder.
 
 4. move all your javascript files to the development/js folder
