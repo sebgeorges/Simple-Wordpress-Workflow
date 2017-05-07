@@ -1,8 +1,8 @@
 {
-  "name": "workflow-example",
-  "version": "0.0.1",
-  "description": "an attempt to wordpress workflow ",
-  "author": "Sebastien Georges",
+  "name": "name it how you want",
+  "version": "1.0.0",
+  "description": "your own description here",
+  "author": "Your name here",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.0.4",

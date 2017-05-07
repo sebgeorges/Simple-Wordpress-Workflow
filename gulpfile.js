@@ -8,16 +8,16 @@ var gulp = require('gulp'),
 var jsSources = [];
 var cssSources =[];
 
-//if you need to change the location of your sources files, do it here
+//if you need to change the location of your source files, do it here
 var jsFilesPath = 'development/js/';
 var cssFilesPath = 'development/css/';
 
 //add your javascripts files below
 
 var jsFiles = [
-    'customizer.js',
-    'navigation.js',
-    'skip-link-focus-fix.js'
+    'example.js',
+    'example2.js',
+    'example3.js'
 ];
 
 //add your css files below
