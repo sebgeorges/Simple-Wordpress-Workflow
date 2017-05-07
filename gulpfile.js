@@ -28,6 +28,13 @@ var cssFiles = [
 ];
 
 
+//change path for image compression
+
+//the uncompressed images to compress
+var imageSource = "development/img/*.*";
+//the compressed images
+var imageOutput = "assets/img";
+
 
 for (i=0; i< jsFiles.length; i++){
     
@@ -93,6 +100,17 @@ function minifyCss(){
 gulp.task('html', function(){
     gulp.src(htmlSources)
     .pipe(livereload())
+});
+
+
+gulp.task('images', function(){
+   gulp.src(imageSource)
+    .pipe(imagemin({
+       progressive: true,
+       svgoPlugins: [{removeViewBox: false}],
+       use: [pngcrush()]
+   }))
+    .pipe(gulp.dest(imageOutput))
 });
 
 

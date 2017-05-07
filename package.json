@@ -1,5 +1,5 @@
 {
-  "name": "name it how you want",
+  "name": "rename-this",
   "version": "1.0.0",
   "description": "your own description here",
   "author": "Your name here",
@@ -8,7 +8,9 @@
     "gulp-clean-css": "^3.0.4",
     "gulp-compass": "^2.1.0",
     "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.2.0",
     "gulp-livereload": "^3.8.1",
-    "gulp-uglify": "^2.1.2"
+    "gulp-uglify": "^2.1.2",
+    "imagemin-pngcrush": "^5.1.0"
   }
 }
