@@ -21,35 +21,47 @@ What it does:
     
     git clone https://github.com/sebgeorges/Simple-Wordpress-Workflow.git
 
-3. in the package.json file:
+3. if it is already created, move the default style.css file to the development/css folder.
+
+4. move all your javascript files to the development/js folder
+
+5. in the package.json file:
 change the information to match your own project
 
-4. In the command prompt, cd to the 
+6. In the command prompt, cd to the 
 directory to your wordpress theme root folder.
+    
+7. Run:
 
-5. Run:
-    npm init
-    
-6. Run:
     npm install
-    
-7. In the gulpfile.js file:
+
+8. In the gulpfile.js file:
 - Add your own files to the jsFiles array (commented)
 - Add your own files to the cssFiles array (commented)
 - Save
 
 
-8. open the .gitignore file and uncomment everything (remove the "#" character at the start of every line)
+9. open the .gitignore file and uncomment everything (remove the "#" character at the start of every line)
 
 Test this in git Bash:
     git status
     
 you should not see any of the worflow files or folders
 
-9. install and activate the chrome plugin:
+10. install and activate the chrome plugin:
 https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en
     
-10. In functions.php enqueue the script.js from the js folder at the root of your theme and the stylesheet style.css from the theme root folder.
+11. In functions.php enqueue a script.js file from the js folder at the root of your theme (not the one in development) and the stylesheet style.css from the theme root folder.
+
+for example:
+
+    function workflow_example_scripts() {
+    wp_enqueue_script( 'workflow-example-javascript', get_template_directory_uri() . '/js/script.js', array(), true );
+    
+    wp_enqueue_style( 'workflow-example-style', get_stylesheet_uri() );
+    }
+    
+    add_action( 'wp_enqueue_scripts', 'workflow_example_scripts' );
 
 
 ## Use
