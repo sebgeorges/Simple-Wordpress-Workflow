@@ -1,0 +1,14 @@
+{
+  "name": "workflow-example",
+  "version": "0.0.1",
+  "description": "an attempt to wordpress workflow ",
+  "author": "Sebastien Georges",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-uglify": "^2.1.2"
+  }
+}
