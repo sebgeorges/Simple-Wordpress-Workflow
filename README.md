@@ -17,9 +17,9 @@ What it does:
 
 2. copy the repo in your wordpress theme root directory or with git:
 
-    git init
+        git init
     
-    git clone https://github.com/sebgeorges/Simple-Wordpress-Workflow.git
+        git clone https://github.com/sebgeorges/Simple-Wordpress-Workflow.git
 
 3. if it is already created, move the default style.css file to the development/css folder.
 
@@ -33,7 +33,7 @@ directory to your wordpress theme root folder.
     
 7. Run:
 
-    npm install
+        npm install
 
 8. In the gulpfile.js file:
 - Add your own files to the jsFiles array (commented)
@@ -44,7 +44,8 @@ directory to your wordpress theme root folder.
 9. open the .gitignore file and uncomment everything (remove the "#" character at the start of every line)
 
 Test this in git Bash:
-    git status
+
+        git status
     
 you should not see any of the worflow files or folders
 
@@ -74,6 +75,7 @@ Before starting development work, ensure the follwing:
 - check that you have a folder named "js" at the root of your theme
 
 You can then start the command prompt, cd to the theme root folder and run:
+
     gulp
 
 Then, when you make changes in your source files in the development folder, the output files (minified and concatenated) are updated in you wordpress theme. At the same time you can view the changes live in the browser in chrome, with the live preview plugin switched on (you need both the gulp task to be running in the command prompt AND the chrome plugin to be switched on for automatic reload to work).
