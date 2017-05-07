@@ -119,7 +119,7 @@ gulp.task('watch', function(){
    gulp.watch(cssSources,['sortcss'])
     gulp.watch(jsSources,['sortjs'])
     gulp.watch(htmlSources,['html'])
- 
+    gulp.watch(imageSource,['images'])
 });
 
 
@@ -131,7 +131,7 @@ gulp.task('sortjs',['js','minify-js'])
 
 
 //set up default gulp command
-gulp.task('default',['html','sortcss','sortjs','watch']);
+gulp.task('default',['html','sortcss','sortjs','images','watch']);
 
 
 
