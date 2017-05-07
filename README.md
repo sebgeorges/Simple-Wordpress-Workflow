@@ -18,6 +18,7 @@ What it does:
 2. copy the repo in your wordpress theme root directory or with git:
 
     git init
+    
     git clone https://github.com/sebgeorges/Simple-Wordpress-Workflow.git
 
 3. in the package.json file:
