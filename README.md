@@ -7,6 +7,7 @@ This is a very basic workflow to install in your theme folder.
 What it does:
 - It concatenates all your css files from the development/css folder in one style.css saved at the root of the theme folder (and therefore used by wordpress)
 - It concatenates all your javascript files from the development/js folder in one script.js file saved and minified as js/script.js.
+- it compresses your image assets (jpeg, png, svg) and outputs the compressed images in assets/img.
 - It adds a default command so you only need to call gulp in the command prompt to get it started
 - It adds a live reload feature so that you can view changes live in the browser as you save your files
 - The .gitingore file excludes allfiles from the workflow so you end up with minified css and js in your typical wordpress install with no extra files.
@@ -25,7 +26,7 @@ Then copy the content of the repo and copy to your theme root directory
 
 **WARNING**
 
-Be careful if you already have folders named **js** or **development** containing files at the theme root as this step may erase exisiting content! Ensure that you either rename your exisiting folders or manually transfer the content form the repo to your exisiting folder.
+Be careful if you already have folders named **js**, **development** or **assets** containing files at the theme root as this step may erase exisiting content! Ensure that you either rename your exisiting folders or manually transfer the content from the repo to your exisiting folder.
 
 3. if it is already created, move the default style.css file to the development/css folder.
 
@@ -73,10 +74,9 @@ for example:
 
 ## Use
 
-You will be working with the files inside the development folder.
-
 Before starting development work, ensure the follwing:
-- scripts and css files are in their respective folders in the development folder. 
+- javascript and css files that you want to work with are in their respective folders in the development folder.
+- Your image assets are in the development/img folder
 - Move the default wordpress style.css file to development/css (it will be replaced with a new minified version as soon as your run the gulp command for the first time)
 - check that you have a folder named "js" at the root of your theme
 
@@ -84,19 +84,56 @@ You can then start the command prompt, cd to the theme root folder and run:
 
     gulp
 
-Then, when you make changes in your source files in the development folder, the output files (minified and concatenated) are updated in you wordpress theme. At the same time you can view the changes live in the browser in chrome, with the live preview plugin switched on (you need both the gulp task to be running in the command prompt AND the chrome plugin to be switched on for automatic reload to work).
+Then, when you make changes in your source files in the development folder, the output files (minified and concatenated) are updated in you wordpress theme. At the same time you can view the changes live in the browser in chrome, with the live preview plugin switched on.
+
+**Note**
+(you need both the gulp task to be running in the command prompt AND the chrome plugin to be switched on for automatic reload to work).
 
 PHP files changes are also set up to track changes so the browser reloads automatically when your make changes in those too.
 
 with git, you can track changes to your theme without worrying about the npm and gulp stuff getting in the way since the .gitignore file is set up to ignore all npm and gulp components (don't forget to uncomment the .gitignore commands, see step 8 of installation).
 
+## Adding Files
+
+If you add css style sheets to your development/css folder, scripts to development/js or images to development/img while gulp is running, these will be processed as normal.If you add anything while gulp is not running, you can process it all by running the gulp command.
+
 ## Options
 
-- if you want to include the distribution version of your css and javascript you can remove the "#development" line in .gitignore.
+- if you want to include the development version of your css and javascript you can remove the "#development" line in .gitignore.
 
 - you can easily change the name of the development folder and its structure by changing the jsFilesPath and cssFilesPath variables in the gulpfile.js file.
 
+If you change the development folder structure, don't forget to update the imageSource variable.
+
 The source file paths are built by concatenating jsFilesPath + jsFiles variables and cssFilesPath + cssFiles.
+
+## Example
+
+Assuming you are using the default folder structure
+
+workflow example
+
+1. run in command prompt
+
+        gulp
+
+2. You add new assets
+- You add new images in development/img
+- the images get compressed and the new compressed images are added to assets/img
+
+3. Make changes in the PHP files
+- You then link the images to your theme (e.g. as background image or figure) from the assets/img folder to one of the wordpress template files and see it happening live in the browser (Chrome) as you save the document.
+
+4. Add styling
+- style your background image/image figure from development/css/style.css (or any other stylesheet you added to the variable cssFiles)
+- you can see the changes as the browser reloads automoatically
+- the css is concatenated with any other stylesheet and gets compressed automatically.
+
+5. Commit your changes in Git and push to your onlie repo if you are using one
+
+### The result
+
+Your theme repo will contain the concatenated and minified css sheets and the compressed images as well as all other theme files. The theme will not contain any of the gulp, npm or development components so that you have a clean and optimised theme that you can upload to your live server.
 
 
 
