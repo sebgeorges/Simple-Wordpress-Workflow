@@ -1,8 +1,10 @@
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
     cleanCSS = require('gulp-clean-css'),
-    livereload = require('gulp-livereload');
-    uglify = require('gulp-uglify');
+    livereload = require('gulp-livereload'),
+    uglify = require('gulp-uglify'),
+    imagemin = require('gulp-imagemin'),
+    pngcrush = require('imagemin-pngcrush')
     ;
 
 var jsSources = [];
